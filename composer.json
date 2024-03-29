@@ -5,21 +5,21 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0",
-        "beyondcode/laravel-prose-linter": "^1.0",
-        "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.3.0",
-        "laravel/framework": "^8.51",
-        "laravel/tinker": "^2.6"
+        "php": "^8.1",
+        "beyondcode/laravel-prose-linter": "^3.1",
+        "guzzlehttp/guzzle": "^7.5",
+        "laravel/framework": "^10.1",
+        "laravel/sanctum": "^3.2",
+        "laravel/tinker": "^2.8"
     },
     "require-dev": {
-        "facade/ignition": "^2.11",
-        "fakerphp/faker": "^1.15.0",
-        "laravel/sail": "^1.8.6",
-        "mockery/mockery": "^1.4.3",
-        "nunomaduro/collision": "^5.5",
-        "phpunit/phpunit": "^9.5.7"
+        "fakerphp/faker": "^1.21.0",
+        "laravel/pint": "^1.6",
+        "laravel/sail": "^1.21",
+        "mockery/mockery": "^1.5.1",
+        "nunomaduro/collision": "^7.0",
+        "phpunit/phpunit": "^10.0",
+        "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -38,6 +38,9 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
@@ -53,8 +56,12 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

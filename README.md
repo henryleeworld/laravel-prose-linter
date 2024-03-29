@@ -1,4 +1,4 @@
-# Laravel 8 散文程式碼規範檢查工具
+# Laravel 10 散文程式碼規範檢查工具
 
 引入 beyondcode 的 laravel-prose-linter 套件來擴增散文程式碼規範檢查工具，幫助潤色應用程式的文本，讓工具檢查您的翻譯，甚至檢查您的 Blade 模板是否存在拼寫錯誤、俚語，並根據您選擇的散文風格獲得更好的寫作風格的建議。
 
@@ -24,5 +24,5 @@ $ php artisan lint:{檢查內容}
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/A2GpJcY.png)
+![](https://i.imgur.com/QW9oGX5.png)
 > 檢查特定的翻譯命名空間
